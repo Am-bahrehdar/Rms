@@ -1,0 +1,139 @@
+<div class="min-h-screen flex items-center justify-center">
+  <div class="container mx-auto p-4 max-w-screen-xl flex-grow">
+    <!-- User Profile Card with Header -->
+    <div class="w-full rounded-lg shadow-md bg-white">
+      <!-- Header Section -->
+      <div class="w-full px-4 py-2 header-line">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-2">
+              <span class="text-gray-600">Search</span>
+            </div>
+            <input
+              type="text"
+              class="bg-gray-100 py-1 px-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+              placeholder="Search..."
+            />
+          </div>
+          <button class="header-option">
+            <span class="text-gray-600" (click)="logoutuser()">Logout</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- User Profile Content -->
+      <div
+        class="p-6 flex flex-col md:flex-row items-center md:items-start flex-grow"
+      >
+        <!-- Left-side profile image and ratings -->
+        <div class="md:mr-8">
+          <div class="overflow-hidden border-2 border-white">
+            <img
+              class="object-cover"
+              src="https://images.pexels.com/photos/8129903/pexels-photo-8129903.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1"
+              srcset="
+                https://images.pexels.com/photos/8129903/pexels-photo-8129903.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1 1x,
+                https://images.pexels.com/photos/8129903/pexels-photo-8129903.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2 2x
+              "
+              alt="User Profile Image"
+            />
+          </div>
+          <div class="flex mt-4 items-center space-x-2">
+            <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path
+                d="M12 2c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0 2c-.551 0-1 .449-1 1s.449 1 1 1 1-.449 1-1-.449-1-1-1zm0 13.901l-3.63 1.885.694-3.95-2.936-2.856 4.02-.587L12 7.1l1.852 3.794 4.02.587-2.937 2.855.693 3.951L12 17.901z"
+              />
+            </svg>
+            <span class="text-gray-600">City, Country</span>
+          </div>
+          <div class="flex mt-2 items-center space-x-1">
+            <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 24 24">
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path
+                d="M12 2c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0 2c-.551 0-1 .449-1 1s.449 1 1 1 1-.449 1-1-.449-1-1-1zm0 13.901l-3.63 1.885.694-3.95-2.936-2.856 4.02-.587L12 7.1l1.852 3.794 4.02.587-2.937 2.855.693 3.951L12 17.901z"
+              />
+            </svg>
+            <span class="text-gray-600">4.5 (256 reviews)</span>
+          </div>
+        </div>
+
+        <!-- Right-side user information -->
+        <div class="mt-4 md:mt-0 md:ml-4">
+          <h1 class="text-3xl font-semibold text-blue-400">
+            {{ user_first_name }}
+          </h1>
+          <p class="text-gray-600 text-sm">{{ user_last_name }}</p>
+          <div class="section-divider mt-4"></div>
+          <div class="mt-4">
+            <h2 class="text-xl font-semibold text-blue-400">
+              Contact Information
+            </h2>
+            <p class="text-gray-600 text-sm">
+              <strong>Email:</strong> {{ email }}
+            </p>
+            <p class="text-gray-600 text-sm">
+              <strong>Email:</strong> {{ user_email }}
+            </p>
+            <p class="text-gray-600 text-sm">
+              <strong>Phone:</strong>{{ phone_number }}
+            </p>
+            <p class="text-gray-600 text-sm">
+              <strong>Address:</strong> {{ address }}<br />
+            </p>
+            <p class="text-gray-600 text-sm">
+              <strong>Postal Code:</strong> {{ postal_code }}<br />
+            </p>
+
+            <p class="text-gray-600 text-sm">
+              <strong>Gender:</strong> {{ gender }}
+            </p>
+
+            <p class="text-gray-600 text-sm">
+              <strong>Goverment ID number:</strong> {{ government_id_no }}
+            </p>
+            <p class="text-gray-600 text-sm">
+              <strong>City:</strong> {{ city }}
+            </p>
+            <p class="text-gray-600 text-sm">
+              <strong>State:</strong> {{ state }}
+            </p>
+            <p class="text-gray-600 text-sm">
+              <strong>Country:</strong> {{ country }}
+            </p>
+            <p class="text-gray-600 text-sm">
+              <strong>Birth Date:</strong> {{ birth_date }}
+            </p>
+          </div>
+          <div class="section-divider mt-4"></div>
+          <div class="mt-4">
+            <h2 class="text-xl font-semibold text-blue-400">Ratings</h2>
+            <div class="flex items-center space-x-1">
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M12 2c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3zm0 2c-.551 0-1 .449-1 1s.449 1 1 1 1-.449 1-1-.449-1-1-1zm0 13.901l-3.63 1.885.694-3.95-2.936-2.856 4.02-.587L12 7.1l1.852 3.794 4.02.587-2.937 2.855.693 3.951L12 17.901z"
+                />
+              </svg>
+              <span class="text-gray-600">4.5 (256 reviews)</span>
+            </div>
+          </div>
+          <div class="section-divider mt-4"></div>
+          <div class="mt-4">
+            <h2 class="text-xl font-semibold text-blue-400">Skills</h2>
+            <div class="skills">
+              <button class="bg-blue-400">HTML</button>
+              <button class="bg-blue-400">CSS</button>
+              <button class="bg-blue-400">JavaScript</button>
+              <button class="bg-blue-400">React</button>
+              <button class="bg-blue-400">Node.js</button>
+              <button class="bg-blue-400">Tailwind CSS</button>
+              <button class="bg-blue-400">Python</button>
+              <button class="bg-blue-400">Django</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

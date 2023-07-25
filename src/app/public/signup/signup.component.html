@@ -1,0 +1,221 @@
+<!-- signup.component.html -->
+
+<div class="max-w-sm mx-auto mt-5">
+  <form (ngSubmit)="onSignup()" #f>
+    <div class="mb-4">
+      <!--First Name -->
+
+      <label class="block text-gray-700 text-sm font-bold mb-2"
+        >Frist name</label
+      >
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="first_name"
+        required
+        #nameField="ngModel"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Full name"
+      />
+      <div
+        *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)"
+        class="text-red-600"
+      >
+        <div *ngIf="nameField.errors.required">Full name is required.</div>
+      </div>
+    </div>
+    <!-- Last Name -->
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2"
+        >Full Name</label
+      >
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="last_name"
+        required
+        #nameField="ngModel"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Full name"
+      />
+      <div
+        *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)"
+        class="text-red-600"
+      >
+        <div *ngIf="nameField.errors.required">Full name is required.</div>
+      </div>
+    </div>
+    <!-- Email -->
+    <label class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="email"
+      required
+      #emailField="ngModel"
+      email
+      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      placeholder="Email"
+    />
+    <div
+      *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)"
+      class="text-red-600"
+    >
+      <div *ngIf="emailField.errors.required">Email is required.</div>
+      <div *ngIf="emailField.errors.email">Email is not valid.</div>
+    </div>
+
+    <div class="mb-4">
+      <!-- password -->
+      <label class="block text-gray-700 text-sm font-bold mb-2"
+        >Password:</label
+      >
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+        #passwordField="ngModel"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Password"
+      />
+      <div
+        *ngIf="
+          passwordField.invalid &&
+          (passwordField.dirty || passwordField.touched)
+        "
+        class="text-red-600"
+      >
+        <div *ngIf="passwordField.errors.required">Password is required.</div>
+      </div>
+    </div>
+    <!-- phone number -->
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2"
+        >Phone Number:</label
+      >
+      <input
+        type="tel"
+        name="phone_number"
+        [(ngModel)]="phone_number"
+        required
+        pattern="[0-9]{10}"
+        #phoneNumberField="ngModel"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Phone Number"
+      />
+      <div
+        *ngIf="
+          phoneNumberField.invalid &&
+          (phoneNumberField.dirty || phoneNumberField.touched)
+        "
+        class="text-red-600"
+      >
+        <div *ngIf="phoneNumberField.errors.required">
+          Phone number is required.
+        </div>
+        <div *ngIf="phoneNumberField.errors.pattern">
+          Phone number must be a 10-digit number.
+        </div>
+      </div>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Address:</label>
+      <input
+        type="text"
+        name="address"
+        [(ngModel)]="address"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Address"
+      />
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Gender:</label>
+      <select
+        name="gender"
+        [(ngModel)]="gender"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      >
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2"
+        >Government ID No:</label
+      >
+      <input
+        type="text"
+        name="government_id_no"
+        [(ngModel)]="government_id_no"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Government ID No"
+      />
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2"
+        >Government ID Photo:</label
+      >
+      <input
+        type="file"
+        name="government_id_photo"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      />
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">City:</label>
+      <input
+        type="text"
+        name="city"
+        [(ngModel)]="city"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="City"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">State:</label>
+      <input
+        type="text"
+        name="state"
+        [(ngModel)]="state"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="State"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2">Country:</label>
+      <input
+        type="text"
+        name="country"
+        [(ngModel)]="country"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Country"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2"
+        >Postal Code:</label
+      >
+      <input
+        type="text"
+        name="postal_code"
+        [(ngModel)]="postal_code"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="Postal Code"
+      />
+    </div>
+
+    <!-- other form fields -->
+    <div class="mb-4">
+      <button
+        type="submit"
+        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-lightBlue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lightBlue disabled:bg-slate-400"
+      >
+        Sign Up
+      </button>
+    </div>
+  </form>
+</div>
